@@ -30,6 +30,7 @@ MEM_WB Register_MEM_WB;
 /**
  * Fetch
 */
+bool isBubble = false;
 void IF() {
 
     /*************************************/
@@ -46,6 +47,9 @@ void IF() {
     } else {
         Register_IF_ID.prog_cnt = reg[ARM_REG_PC] / 4;
         Register_IF_ID.recent_instr = instructions[reg[ARM_REG_PC] / 4];
+        if (isBubble){
+            Register_IF_ID.recent_instr.opcode = BUBBLE;
+        }
         reg[ARM_REG_PC] += 4;
     }
     fout << ARM_OPC_NAME[Register_IF_ID.recent_instr.opcode] << endl;
@@ -69,9 +73,14 @@ void ID() {
     Register_ID_EX.load_use_hazard = false;
     Register_ID_EX.opcode = Register_IF_ID.recent_instr.opcode;
     Register_ID_EX.type = Register_IF_ID.recent_instr.type;
-    ARM_OPC preInstruct_OPC = Register_ID_EX.opcode;
     int preInstructDest = Register_ID_EX.dest;
-    bool preInstructIsLoad = preInstruct_OPC == OPC_LDR;
+    bool preInstructIsLoad = Register_ID_EX.opcode == OPC_LDR;
+    fout << ARM_OPC_NAME[Register_ID_EX.opcode] << endl;
+
+    if (Register_IF_ID.recent_instr.opcode == BUBBLE){
+        return;
+    }
+
     //detect load-use data hazard
     load_use_hazard = false;
 
@@ -127,7 +136,9 @@ void ID() {
     }
 
     Register_ID_EX.load_use_hazard = load_use_hazard;
-    fout << ARM_OPC_NAME[Register_ID_EX.opcode] << endl;
+    if (load_use_hazard){
+        Register_ID_EX.opcode = BUBBLE;
+    }
 }
 
 /**
@@ -152,17 +163,12 @@ void EX() {
     Register_EX_MEM.prog_cnt = Register_ID_EX.prog_cnt;
     Register_EX_MEM.opcode = Register_ID_EX.opcode;
     Register_EX_MEM.type = Register_ID_EX.type;
+    fout << ARM_OPC_NAME[Register_EX_MEM.opcode] << endl;
 
-    if (Register_ID_EX.load_use_hazard){
-        fout << ARM_OPC_NAME[BUBBLE] << endl;
+    if (Register_ID_EX.opcode == BUBBLE){
         return;
     }
 
-    //don't need to ex, branch and mov 
-    if (Register_ID_EX.opcode == OPC_B || Register_ID_EX.opcode == OPC_BL || Register_ID_EX.opcode == OPC_EXIT){
-        fout << ARM_OPC_NAME[Register_EX_MEM.opcode] << endl;
-        return;
-    }
     int r1; // first oprend
     bool oneIsPassed = false; //first oprend is from forwarding
     int r2; // second oprend
@@ -222,8 +228,6 @@ void EX() {
 
     Register_EX_MEM.r1Data = r1;
     Register_EX_MEM.r2Data = r2;
-
-    fout << ARM_OPC_NAME[Register_EX_MEM.opcode] << endl;
 }
 
 /**
@@ -236,35 +240,33 @@ void MEM() {
     /* Note: you are expected to detect  */
     /*  control hazards in this stage.   */
     /*************************************/
-    if (Register_EX_MEM.load_use_hazard){
-        fout << ARM_OPC_NAME[BUBBLE] << endl;
+    Register_MEM_WB.dest = Register_EX_MEM.dest;
+    Register_MEM_WB.prog_cnt = Register_EX_MEM.prog_cnt;
+    Register_MEM_WB.opcode = Register_EX_MEM.opcode;
+    Register_MEM_WB.type = Register_EX_MEM.type;
+    fout << ARM_OPC_NAME[Register_EX_MEM.opcode] << endl;
+
+    if (Register_EX_MEM.opcode == BUBBLE){
         return;
+    }
+
+    if ((Register_EX_MEM.opcode == OPC_CMPBGE && Register_EX_MEM.val_arith >= 0) || (Register_EX_MEM.opcode == OPC_CMPBNE && Register_EX_MEM.val_arith != 0) || (Register_EX_MEM.opcode == OPC_B) || (Register_EX_MEM.opcode == OPC_BL)){
+        control_hazard = true;
+        Register_ID_EX.opcode = BUBBLE;
+        Register_IF_ID.recent_instr.opcode = BUBBLE;
+        isBubble = true;
+        leap = Register_EX_MEM.dest;
     }
 
     EX_MEM_RegWrite = false;
     EX_MEM_Dest = 0;
     EX_MEM_Result = 0;
-    if (Register_ID_EX.opcode == OPC_ADD){
+    if (Register_EX_MEM.opcode == OPC_ADD || Register_EX_MEM.opcode == OPC_SUB || Register_EX_MEM.opcode == OPC_MUL || Register_EX_MEM.opcode == OPC_MOV){
         EX_MEM_RegWrite = true;
         EX_MEM_Dest = Register_EX_MEM.dest;
         EX_MEM_Result = Register_EX_MEM.val_arith;
         Register_MEM_WB.val_data = Register_EX_MEM.val_arith;
-    }else if (Register_ID_EX.opcode == OPC_SUB){
-        EX_MEM_RegWrite = true;
-        EX_MEM_Dest = Register_EX_MEM.dest;
-        EX_MEM_Result = Register_EX_MEM.val_arith;
-        Register_MEM_WB.val_data = Register_EX_MEM.val_arith;
-    }else if (Register_ID_EX.opcode == OPC_MUL){
-        EX_MEM_RegWrite = true;
-        EX_MEM_Dest = Register_EX_MEM.dest;
-        EX_MEM_Result = Register_EX_MEM.val_arith;
-        Register_MEM_WB.val_data = Register_EX_MEM.val_arith;
-    }else if (Register_ID_EX.opcode == OPC_MOV){
-        EX_MEM_RegWrite = true;
-        EX_MEM_Dest = Register_EX_MEM.dest;
-        EX_MEM_Result = Register_EX_MEM.val_arith;
-        Register_MEM_WB.val_data = Register_EX_MEM.val_arith;       
-    }else if (Register_ID_EX.opcode == OPC_LDR){
+    }else if (Register_EX_MEM.opcode == OPC_LDR){
         EX_MEM_RegWrite = true;
         EX_MEM_Dest = Register_EX_MEM.dest;
         EX_MEM_Result = Register_EX_MEM.val_arith;
@@ -272,12 +274,6 @@ void MEM() {
     }else if (Register_EX_MEM.opcode == OPC_STR){
         mem[Register_EX_MEM.val_arith] = Register_EX_MEM.r2Data;
     }
-
-    Register_MEM_WB.dest = Register_EX_MEM.dest;
-    Register_MEM_WB.prog_cnt = Register_EX_MEM.prog_cnt;
-    Register_MEM_WB.opcode = Register_EX_MEM.opcode;
-    Register_MEM_WB.type = Register_EX_MEM.type;
-    fout << ARM_OPC_NAME[Register_EX_MEM.opcode] << endl;
 }
 
 /**
@@ -289,52 +285,31 @@ void WB() {
     /* TODO: Fix and complete WB stage.  */
     /* Hint: update the register state.  */
     /*************************************/
-    if (load_use_hazard){
-        fout << ARM_OPC_NAME[BUBBLE] << endl;
-        return;
-    }
-
     MEM_WB_RegWrite = false;
     MEM_WB_Dest = 0;
     MEM_WB_Result = 0;
-    if (Register_MEM_WB.opcode == OPC_ADD){
-        MEM_WB_RegWrite = true;
-        MEM_WB_Dest = Register_MEM_WB.dest;
-        MEM_WB_Result = Register_MEM_WB.val_data;
-        reg[Register_MEM_WB.dest] = Register_MEM_WB.val_data; 
-    }else if (Register_MEM_WB.opcode == OPC_SUB){
-        MEM_WB_RegWrite = true;
-        MEM_WB_Dest = Register_MEM_WB.dest;
-        MEM_WB_Result = Register_MEM_WB.val_data;
-        reg[Register_MEM_WB.dest] = Register_MEM_WB.val_data;
-    }else if (Register_MEM_WB.opcode == OPC_MUL){
-        MEM_WB_RegWrite = true;
-        MEM_WB_Dest = Register_MEM_WB.dest;
-        MEM_WB_Result = Register_MEM_WB.val_data;
-        reg[Register_MEM_WB.dest] = Register_MEM_WB.val_data;
-    }else if (Register_MEM_WB.opcode == OPC_MOV){
-        MEM_WB_RegWrite = true;
-        MEM_WB_Dest = Register_MEM_WB.dest;
-        MEM_WB_Result = Register_MEM_WB.val_data;
-        reg[Register_MEM_WB.dest] = Register_MEM_WB.val_data;       
-    }else if (Register_MEM_WB.opcode == OPC_LDR){
-        MEM_WB_RegWrite = true;
-        MEM_WB_Dest = Register_MEM_WB.dest;
-        MEM_WB_Result = Register_MEM_WB.val_data;
-        reg[Register_MEM_WB.dest] = Register_MEM_WB.val_data;      
-    }
-
     if (Register_MEM_WB.opcode == OPC_EXIT) {
         shut_down = true;
     } else if (Register_MEM_WB.opcode == END_OF_FILE) {
         file_end = true;
     }
     fout << ARM_OPC_NAME[Register_MEM_WB.opcode] << endl;
+
+    if (Register_ID_EX.opcode == BUBBLE){
+        return;
+    }
+
+    if (Register_MEM_WB.opcode == OPC_ADD || Register_MEM_WB.opcode == OPC_SUB || Register_MEM_WB.opcode == OPC_MUL || Register_MEM_WB.opcode == OPC_MOV || Register_MEM_WB.opcode == OPC_LDR){
+        MEM_WB_RegWrite = true;
+        MEM_WB_Dest = Register_MEM_WB.dest;
+        MEM_WB_Result = Register_MEM_WB.val_data;
+        reg[Register_MEM_WB.dest] = Register_MEM_WB.val_data; 
+    }
 }
 
 // ====================== PIPELINE STAGES ======================
 
-
+int leap = 0;
 void deal_with_hazards() {
     if (load_use_hazard) {
 
@@ -343,7 +318,6 @@ void deal_with_hazards() {
         /* Hint: inserting a bubble between load and use.                  */
         /*******************************************************************/
         reg[ARM_REG_PC] -= 4;
-
         load_use_hazard = false;
     }
     if (control_hazard) {
@@ -352,8 +326,11 @@ void deal_with_hazards() {
         /* TODO: additional operations to deal with control hazards.       */
         /* Hint: roll back IF & ID & EX stages; reset PC to correct value. */
         /*******************************************************************/
-
+        reg[ARM_REG_PC] -= 4 * 3;
+        reg[ARM_REG_PC] += 4 * leap;
+        leap = 0;
         control_hazard = false;
+        isBubble = false;
     }
 }
 
