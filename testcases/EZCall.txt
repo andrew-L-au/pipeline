@@ -1,0 +1,15 @@
+main:
+0x000:  mov r0, #1
+0x004:  mov r1, #2
+0x008:  mov r2, #4
+l1:
+0x00c:  cmp r0, r2
+        bge l2
+0x010:  bl  sum             @ Call.
+0x014:  b   l1
+sum:
+0x018:  add r0, r0, r1
+0x01c:  mov pc, lr          @ Return.
+l2:
+0x020:  sub r0, r0, r1
+0x024:  Exit

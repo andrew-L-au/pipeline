@@ -1,0 +1,11 @@
+main:
+0x000:  mov r6, #4
+0x004:  mov r7, #0
+0x008:  str r6, [r7, #4]    @ Data hazard on reg[7]. Deal with EX forward.
+0x00c:  ldr r1, [r6]        @ Data hazard on mem[4]. No extra operation needed.
+0x010:  str r7, [r1]        @ Data hazard on reg[1]. Deal with MEM forward and one BUBBLE.
+0x014:  mov r2, #4
+0x018:  ldr r2, [r2]        @ Data hazard on reg[2]. Deal with EX forward.
+0x01c:  mul r2, r2, #2      @ Data hazard on reg[2]. Deal with MEM forward and one BUBBLE.
+0x020:  add r3, r2, r1      @ Data hazard on reg[2]. Deal with EX forward.
+0x024:  Exit
