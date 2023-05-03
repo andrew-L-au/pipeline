@@ -3,3 +3,2706 @@ reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    =
 reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
 reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x0       	reg[15]   = 0x0       	
 
+======= WB =======
+
+======= MEM ======
+
+======= EX =======
+
+======= ID =======
+
+======= IF =======
+mov
+
+reg[0]    = 0         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x0       	reg[15]   = 0x4       	
+
+Instr N: 0
+Latency: 1
+
+
+======= WB =======
+
+======= MEM ======
+
+======= EX =======
+
+======= ID =======
+mov
+======= IF =======
+bl
+
+reg[0]    = 0         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x0       	reg[15]   = 0x8       	
+
+Instr N: 0
+Latency: 2
+
+
+======= WB =======
+
+======= MEM ======
+
+======= EX =======
+mov
+======= ID =======
+bl
+======= IF =======
+b
+
+reg[0]    = 0         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x0       	reg[15]   = 0xc       	
+
+Instr N: 0
+Latency: 3
+
+
+======= WB =======
+
+======= MEM ======
+mov
+======= EX =======
+bl
+======= ID =======
+b
+======= IF =======
+sub
+
+reg[0]    = 0         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x0       	reg[15]   = 0x10      	
+
+Instr N: 0
+Latency: 5
+
+
+======= WB =======
+mov
+======= MEM ======
+bl
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0xc       	
+
+Instr N: 1
+Latency: 6
+
+
+======= WB =======
+bl
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x10      	
+
+Instr N: 2
+Latency: 7
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+str
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x14      	
+
+Instr N: 2
+Latency: 8
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+str
+======= IF =======
+str
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x18      	
+
+Instr N: 2
+Latency: 9
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+str
+======= ID =======
+str
+======= IF =======
+cmp & bne
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x1c      	
+
+Instr N: 2
+Latency: 29
+
+
+======= WB =======
+sub
+======= MEM ======
+mem[2996] = 8
+str
+======= EX =======
+str
+======= ID =======
+cmp & bne
+======= IF =======
+mov
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x20      	
+
+Instr N: 3
+Latency: 49
+
+
+======= WB =======
+str
+======= MEM ======
+mem[2992] = 6
+str
+======= EX =======
+cmp & bne
+======= ID =======
+mov
+======= IF =======
+add
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x24      	
+
+Instr N: 4
+Latency: 51
+
+
+======= WB =======
+str
+======= MEM ======
+cmp & bne
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x28      	
+
+Instr N: 5
+Latency: 52
+
+
+======= WB =======
+cmp & bne
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x2c      	
+
+Instr N: 6
+Latency: 53
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+bl
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x30      	
+
+Instr N: 6
+Latency: 54
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+bl
+======= IF =======
+mov
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x34      	
+
+Instr N: 6
+Latency: 55
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+bl
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 6         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x38      	
+
+Instr N: 6
+Latency: 57
+
+
+======= WB =======
+sub
+======= MEM ======
+bl
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0xc       	
+
+Instr N: 7
+Latency: 58
+
+
+======= WB =======
+bl
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x10      	
+
+Instr N: 8
+Latency: 59
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+str
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x14      	
+
+Instr N: 8
+Latency: 60
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+str
+======= IF =======
+str
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x18      	
+
+Instr N: 8
+Latency: 61
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+str
+======= ID =======
+str
+======= IF =======
+cmp & bne
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x1c      	
+
+Instr N: 8
+Latency: 81
+
+
+======= WB =======
+sub
+======= MEM ======
+mem[2988] = 48
+str
+======= EX =======
+str
+======= ID =======
+cmp & bne
+======= IF =======
+mov
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x20      	
+
+Instr N: 9
+Latency: 101
+
+
+======= WB =======
+str
+======= MEM ======
+mem[2984] = 5
+str
+======= EX =======
+cmp & bne
+======= ID =======
+mov
+======= IF =======
+add
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x24      	
+
+Instr N: 10
+Latency: 103
+
+
+======= WB =======
+str
+======= MEM ======
+cmp & bne
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x28      	
+
+Instr N: 11
+Latency: 104
+
+
+======= WB =======
+cmp & bne
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x2c      	
+
+Instr N: 12
+Latency: 105
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+bl
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 12
+Latency: 106
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+bl
+======= IF =======
+mov
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 12
+Latency: 107
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+bl
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 5         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 12
+Latency: 109
+
+
+======= WB =======
+sub
+======= MEM ======
+bl
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0xc       	
+
+Instr N: 13
+Latency: 110
+
+
+======= WB =======
+bl
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x10      	
+
+Instr N: 14
+Latency: 111
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+str
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x14      	
+
+Instr N: 14
+Latency: 112
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+str
+======= IF =======
+str
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x18      	
+
+Instr N: 14
+Latency: 113
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+str
+======= ID =======
+str
+======= IF =======
+cmp & bne
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x1c      	
+
+Instr N: 14
+Latency: 133
+
+
+======= WB =======
+sub
+======= MEM ======
+mem[2980] = 48
+str
+======= EX =======
+str
+======= ID =======
+cmp & bne
+======= IF =======
+mov
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x20      	
+
+Instr N: 15
+Latency: 153
+
+
+======= WB =======
+str
+======= MEM ======
+mem[2976] = 4
+str
+======= EX =======
+cmp & bne
+======= ID =======
+mov
+======= IF =======
+add
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x24      	
+
+Instr N: 16
+Latency: 155
+
+
+======= WB =======
+str
+======= MEM ======
+cmp & bne
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x28      	
+
+Instr N: 17
+Latency: 156
+
+
+======= WB =======
+cmp & bne
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x2c      	
+
+Instr N: 18
+Latency: 157
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+bl
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 18
+Latency: 158
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+bl
+======= IF =======
+mov
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 18
+Latency: 159
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+bl
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 4         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 18
+Latency: 161
+
+
+======= WB =======
+sub
+======= MEM ======
+bl
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0xc       	
+
+Instr N: 19
+Latency: 162
+
+
+======= WB =======
+bl
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x10      	
+
+Instr N: 20
+Latency: 163
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+str
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x14      	
+
+Instr N: 20
+Latency: 164
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+str
+======= IF =======
+str
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x18      	
+
+Instr N: 20
+Latency: 165
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+str
+======= ID =======
+str
+======= IF =======
+cmp & bne
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x1c      	
+
+Instr N: 20
+Latency: 185
+
+
+======= WB =======
+sub
+======= MEM ======
+mem[2972] = 48
+str
+======= EX =======
+str
+======= ID =======
+cmp & bne
+======= IF =======
+mov
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x20      	
+
+Instr N: 21
+Latency: 205
+
+
+======= WB =======
+str
+======= MEM ======
+mem[2968] = 3
+str
+======= EX =======
+cmp & bne
+======= ID =======
+mov
+======= IF =======
+add
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x24      	
+
+Instr N: 22
+Latency: 207
+
+
+======= WB =======
+str
+======= MEM ======
+cmp & bne
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x28      	
+
+Instr N: 23
+Latency: 208
+
+
+======= WB =======
+cmp & bne
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x2c      	
+
+Instr N: 24
+Latency: 209
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+bl
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 24
+Latency: 210
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+bl
+======= IF =======
+mov
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 24
+Latency: 211
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+bl
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 3         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 24
+Latency: 213
+
+
+======= WB =======
+sub
+======= MEM ======
+bl
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0xc       	
+
+Instr N: 25
+Latency: 214
+
+
+======= WB =======
+bl
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x10      	
+
+Instr N: 26
+Latency: 215
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+str
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x14      	
+
+Instr N: 26
+Latency: 216
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+str
+======= IF =======
+str
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x18      	
+
+Instr N: 26
+Latency: 217
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+str
+======= ID =======
+str
+======= IF =======
+cmp & bne
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x1c      	
+
+Instr N: 26
+Latency: 237
+
+
+======= WB =======
+sub
+======= MEM ======
+mem[2964] = 48
+str
+======= EX =======
+str
+======= ID =======
+cmp & bne
+======= IF =======
+mov
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x20      	
+
+Instr N: 27
+Latency: 257
+
+
+======= WB =======
+str
+======= MEM ======
+mem[2960] = 2
+str
+======= EX =======
+cmp & bne
+======= ID =======
+mov
+======= IF =======
+add
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x24      	
+
+Instr N: 28
+Latency: 259
+
+
+======= WB =======
+str
+======= MEM ======
+cmp & bne
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x28      	
+
+Instr N: 29
+Latency: 260
+
+
+======= WB =======
+cmp & bne
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x2c      	
+
+Instr N: 30
+Latency: 261
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+bl
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 30
+Latency: 262
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+bl
+======= IF =======
+mov
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 30
+Latency: 263
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+bl
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 30
+Latency: 265
+
+
+======= WB =======
+sub
+======= MEM ======
+bl
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0xc       	
+
+Instr N: 31
+Latency: 266
+
+
+======= WB =======
+bl
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+sub
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x10      	
+
+Instr N: 32
+Latency: 267
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+sub
+======= IF =======
+str
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x14      	
+
+Instr N: 32
+Latency: 268
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+sub
+======= ID =======
+str
+======= IF =======
+str
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x18      	
+
+Instr N: 32
+Latency: 269
+
+
+======= WB =======
+bubble
+======= MEM ======
+sub
+======= EX =======
+str
+======= ID =======
+str
+======= IF =======
+cmp & bne
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x1c      	
+
+Instr N: 32
+Latency: 289
+
+
+======= WB =======
+sub
+======= MEM ======
+mem[2956] = 48
+str
+======= EX =======
+str
+======= ID =======
+cmp & bne
+======= IF =======
+mov
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2952      	reg[14]   = 0x30      	reg[15]   = 0x20      	
+
+Instr N: 33
+Latency: 309
+
+
+======= WB =======
+str
+======= MEM ======
+mem[2952] = 1
+str
+======= EX =======
+cmp & bne
+======= ID =======
+mov
+======= IF =======
+add
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2952      	reg[14]   = 0x30      	reg[15]   = 0x24      	
+
+Instr N: 34
+Latency: 311
+
+
+======= WB =======
+str
+======= MEM ======
+cmp & bne
+======= EX =======
+mov
+======= ID =======
+add
+======= IF =======
+mov
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2952      	reg[14]   = 0x30      	reg[15]   = 0x28      	
+
+Instr N: 35
+Latency: 312
+
+
+======= WB =======
+cmp & bne
+======= MEM ======
+mov
+======= EX =======
+add
+======= ID =======
+mov
+======= IF =======
+sub
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2952      	reg[14]   = 0x30      	reg[15]   = 0x2c      	
+
+Instr N: 36
+Latency: 313
+
+
+======= WB =======
+mov
+======= MEM ======
+add
+======= EX =======
+mov
+======= ID =======
+sub
+======= IF =======
+bl
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2952      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 37
+Latency: 314
+
+
+======= WB =======
+add
+======= MEM ======
+mov
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 38
+Latency: 315
+
+
+======= WB =======
+mov
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+mov
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 39
+Latency: 316
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 39
+Latency: 317
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+mov
+======= ID =======
+ldr
+======= IF =======
+ldr
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x3c      	
+
+Instr N: 39
+Latency: 318
+
+
+======= WB =======
+bubble
+======= MEM ======
+mov
+======= EX =======
+ldr
+======= ID =======
+ldr
+======= IF =======
+add
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 0         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x40      	
+
+Instr N: 39
+Latency: 338
+
+
+======= WB =======
+mov
+======= MEM ======
+mem[2960] = 2
+ldr
+======= EX =======
+ldr
+======= ID =======
+add
+======= IF =======
+mov
+
+reg[0]    = 1         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x44      	
+
+Instr N: 40
+Latency: 358
+
+
+======= WB =======
+ldr
+======= MEM ======
+mem[2964] = 48
+ldr
+======= EX =======
+add
+======= ID =======
+mov
+======= IF =======
+mul
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x48      	
+
+Instr N: 41
+Latency: 359
+
+
+======= WB =======
+ldr
+======= MEM ======
+add
+======= EX =======
+mov
+======= ID =======
+mul
+======= IF =======
+mov
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2960      	reg[14]   = 0x30      	reg[15]   = 0x4c      	
+
+Instr N: 42
+Latency: 364
+
+
+======= WB =======
+add
+======= MEM ======
+mov
+======= EX =======
+mul
+======= ID =======
+mov
+======= IF =======
+exit
+
+reg[0]    = 2         	reg[1]    = 0         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 43
+Latency: 365
+
+
+======= WB =======
+mov
+======= MEM ======
+mul
+======= EX =======
+mov
+======= ID =======
+exit
+======= IF =======
+
+
+reg[0]    = 2         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 44
+Latency: 366
+
+
+======= WB =======
+mul
+======= MEM ======
+mov
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 2         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 45
+Latency: 367
+
+
+======= WB =======
+mov
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+mov
+
+reg[0]    = 2         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 46
+Latency: 368
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 2         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 46
+Latency: 369
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+mov
+======= ID =======
+ldr
+======= IF =======
+ldr
+
+reg[0]    = 2         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x3c      	
+
+Instr N: 46
+Latency: 370
+
+
+======= WB =======
+bubble
+======= MEM ======
+mov
+======= EX =======
+ldr
+======= ID =======
+ldr
+======= IF =======
+add
+
+reg[0]    = 2         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 1         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x40      	
+
+Instr N: 46
+Latency: 390
+
+
+======= WB =======
+mov
+======= MEM ======
+mem[2968] = 3
+ldr
+======= EX =======
+ldr
+======= ID =======
+add
+======= IF =======
+mov
+
+reg[0]    = 2         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x44      	
+
+Instr N: 47
+Latency: 410
+
+
+======= WB =======
+ldr
+======= MEM ======
+mem[2972] = 48
+ldr
+======= EX =======
+add
+======= ID =======
+mov
+======= IF =======
+mul
+
+reg[0]    = 3         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x48      	
+
+Instr N: 48
+Latency: 411
+
+
+======= WB =======
+ldr
+======= MEM ======
+add
+======= EX =======
+mov
+======= ID =======
+mul
+======= IF =======
+mov
+
+reg[0]    = 3         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2968      	reg[14]   = 0x30      	reg[15]   = 0x4c      	
+
+Instr N: 49
+Latency: 416
+
+
+======= WB =======
+add
+======= MEM ======
+mov
+======= EX =======
+mul
+======= ID =======
+mov
+======= IF =======
+exit
+
+reg[0]    = 3         	reg[1]    = 2         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 50
+Latency: 417
+
+
+======= WB =======
+mov
+======= MEM ======
+mul
+======= EX =======
+mov
+======= ID =======
+exit
+======= IF =======
+
+
+reg[0]    = 3         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 51
+Latency: 418
+
+
+======= WB =======
+mul
+======= MEM ======
+mov
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 6         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 52
+Latency: 419
+
+
+======= WB =======
+mov
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+mov
+
+reg[0]    = 6         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 53
+Latency: 420
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 6         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 53
+Latency: 421
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+mov
+======= ID =======
+ldr
+======= IF =======
+ldr
+
+reg[0]    = 6         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x3c      	
+
+Instr N: 53
+Latency: 422
+
+
+======= WB =======
+bubble
+======= MEM ======
+mov
+======= EX =======
+ldr
+======= ID =======
+ldr
+======= IF =======
+add
+
+reg[0]    = 6         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 2         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x40      	
+
+Instr N: 53
+Latency: 442
+
+
+======= WB =======
+mov
+======= MEM ======
+mem[2976] = 4
+ldr
+======= EX =======
+ldr
+======= ID =======
+add
+======= IF =======
+mov
+
+reg[0]    = 6         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x44      	
+
+Instr N: 54
+Latency: 462
+
+
+======= WB =======
+ldr
+======= MEM ======
+mem[2980] = 48
+ldr
+======= EX =======
+add
+======= ID =======
+mov
+======= IF =======
+mul
+
+reg[0]    = 4         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x48      	
+
+Instr N: 55
+Latency: 463
+
+
+======= WB =======
+ldr
+======= MEM ======
+add
+======= EX =======
+mov
+======= ID =======
+mul
+======= IF =======
+mov
+
+reg[0]    = 4         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2976      	reg[14]   = 0x30      	reg[15]   = 0x4c      	
+
+Instr N: 56
+Latency: 468
+
+
+======= WB =======
+add
+======= MEM ======
+mov
+======= EX =======
+mul
+======= ID =======
+mov
+======= IF =======
+exit
+
+reg[0]    = 4         	reg[1]    = 3         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 57
+Latency: 469
+
+
+======= WB =======
+mov
+======= MEM ======
+mul
+======= EX =======
+mov
+======= ID =======
+exit
+======= IF =======
+
+
+reg[0]    = 4         	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 58
+Latency: 470
+
+
+======= WB =======
+mul
+======= MEM ======
+mov
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 24        	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 59
+Latency: 471
+
+
+======= WB =======
+mov
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+mov
+
+reg[0]    = 24        	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 60
+Latency: 472
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 24        	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 60
+Latency: 473
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+mov
+======= ID =======
+ldr
+======= IF =======
+ldr
+
+reg[0]    = 24        	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x3c      	
+
+Instr N: 60
+Latency: 474
+
+
+======= WB =======
+bubble
+======= MEM ======
+mov
+======= EX =======
+ldr
+======= ID =======
+ldr
+======= IF =======
+add
+
+reg[0]    = 24        	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 6         	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x40      	
+
+Instr N: 60
+Latency: 494
+
+
+======= WB =======
+mov
+======= MEM ======
+mem[2984] = 5
+ldr
+======= EX =======
+ldr
+======= ID =======
+add
+======= IF =======
+mov
+
+reg[0]    = 24        	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x44      	
+
+Instr N: 61
+Latency: 514
+
+
+======= WB =======
+ldr
+======= MEM ======
+mem[2988] = 48
+ldr
+======= EX =======
+add
+======= ID =======
+mov
+======= IF =======
+mul
+
+reg[0]    = 5         	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x48      	
+
+Instr N: 62
+Latency: 515
+
+
+======= WB =======
+ldr
+======= MEM ======
+add
+======= EX =======
+mov
+======= ID =======
+mul
+======= IF =======
+mov
+
+reg[0]    = 5         	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2984      	reg[14]   = 0x30      	reg[15]   = 0x4c      	
+
+Instr N: 63
+Latency: 520
+
+
+======= WB =======
+add
+======= MEM ======
+mov
+======= EX =======
+mul
+======= ID =======
+mov
+======= IF =======
+exit
+
+reg[0]    = 5         	reg[1]    = 4         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 64
+Latency: 521
+
+
+======= WB =======
+mov
+======= MEM ======
+mul
+======= EX =======
+mov
+======= ID =======
+exit
+======= IF =======
+
+
+reg[0]    = 5         	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x50      	
+
+Instr N: 65
+Latency: 522
+
+
+======= WB =======
+mul
+======= MEM ======
+mov
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 120       	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x30      	
+
+Instr N: 66
+Latency: 523
+
+
+======= WB =======
+mov
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+mov
+
+reg[0]    = 120       	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x34      	
+
+Instr N: 67
+Latency: 524
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+mov
+======= IF =======
+ldr
+
+reg[0]    = 120       	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x38      	
+
+Instr N: 67
+Latency: 525
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+mov
+======= ID =======
+ldr
+======= IF =======
+ldr
+
+reg[0]    = 120       	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x3c      	
+
+Instr N: 67
+Latency: 526
+
+
+======= WB =======
+bubble
+======= MEM ======
+mov
+======= EX =======
+ldr
+======= ID =======
+ldr
+======= IF =======
+add
+
+reg[0]    = 120       	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 24        	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x40      	
+
+Instr N: 67
+Latency: 546
+
+
+======= WB =======
+mov
+======= MEM ======
+mem[2992] = 6
+ldr
+======= EX =======
+ldr
+======= ID =======
+add
+======= IF =======
+mov
+
+reg[0]    = 120       	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x44      	
+
+Instr N: 68
+Latency: 566
+
+
+======= WB =======
+ldr
+======= MEM ======
+mem[2996] = 8
+ldr
+======= EX =======
+add
+======= ID =======
+mov
+======= IF =======
+mul
+
+reg[0]    = 6         	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 2992      	reg[14]   = 0x30      	reg[15]   = 0x48      	
+
+Instr N: 69
+Latency: 567
+
+
+======= WB =======
+ldr
+======= MEM ======
+add
+======= EX =======
+mov
+======= ID =======
+mul
+======= IF =======
+mov
+
+reg[0]    = 6         	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 2992      	reg[14]   = 0x8       	reg[15]   = 0x4c      	
+
+Instr N: 70
+Latency: 572
+
+
+======= WB =======
+add
+======= MEM ======
+mov
+======= EX =======
+mul
+======= ID =======
+mov
+======= IF =======
+exit
+
+reg[0]    = 6         	reg[1]    = 5         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x50      	
+
+Instr N: 71
+Latency: 573
+
+
+======= WB =======
+mov
+======= MEM ======
+mul
+======= EX =======
+mov
+======= ID =======
+exit
+======= IF =======
+
+
+reg[0]    = 6         	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x50      	
+
+Instr N: 72
+Latency: 574
+
+
+======= WB =======
+mul
+======= MEM ======
+mov
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x8       	
+
+Instr N: 73
+Latency: 575
+
+
+======= WB =======
+mov
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+b
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0xc       	
+
+Instr N: 74
+Latency: 576
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+b
+======= IF =======
+sub
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x10      	
+
+Instr N: 74
+Latency: 577
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+b
+======= ID =======
+sub
+======= IF =======
+str
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x14      	
+
+Instr N: 74
+Latency: 579
+
+
+======= WB =======
+bubble
+======= MEM ======
+b
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+bubble
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x4c      	
+
+Instr N: 74
+Latency: 580
+
+
+======= WB =======
+b
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+bubble
+======= IF =======
+exit
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x50      	
+
+Instr N: 75
+Latency: 581
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+bubble
+======= ID =======
+exit
+======= IF =======
+
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x50      	
+
+Instr N: 75
+Latency: 582
+
+
+======= WB =======
+bubble
+======= MEM ======
+bubble
+======= EX =======
+exit
+======= ID =======
+
+======= IF =======
+
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x50      	
+
+Instr N: 75
+Latency: 583
+
+
+======= WB =======
+bubble
+======= MEM ======
+exit
+======= EX =======
+
+======= ID =======
+
+======= IF =======
+
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x50      	
+
+Instr N: 75
+Latency: 584
+
+
+======= WB =======
+exit
+======= MEM ======
+
+======= EX =======
+
+======= ID =======
+
+======= IF =======
+
+
+reg[0]    = 720       	reg[1]    = 6         	reg[2]    = 0         	reg[3]    = 0         	
+reg[4]    = 0         	reg[5]    = 0         	reg[6]    = 0         	reg[7]    = 0         	
+reg[8]    = 0         	reg[9]    = 0         	reg[10]   = 0         	reg[11]   = 0         	
+reg[12]   = 120       	reg[13]   = 3000      	reg[14]   = 0x8       	reg[15]   = 0x50      	
+
+Instr N: 75
+Latency: 585
+
+
+CPI: 7.8
