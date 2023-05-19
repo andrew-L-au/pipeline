@@ -1,25 +1,11 @@
 main:
-0x000:  mov r0, #6
-0x004:  bl  fact
-0x008:  b   l2
-fact:
-0x00c:  sub sp, sp, #8
-0x010:  str lr, [sp, #4]
-0x014:  str r0, [sp, #0]
-0x018:  cmp r0, #1
-        bne l1
-0x01c:  mov r0, #1
-0x020:  add sp, sp, #8
-0x024:  mov pc, lr
-l1:
-0x028:  sub r0, r0, #1
-0x02c:  bl  fact
-0x030:  mov r12, r0
-0x034:  ldr r0, [sp, #0]
-0x038:  ldr lr, [sp, #4]
-0x03c:  add sp, sp, #8
-0x040:  mov r1, r0
-0x044:  mul r0, r1, r12
-0x048:  mov pc, lr
-l2:
-0x04c:  Exit
+0x000:  mov r6, #4
+0x004:  mov r7, #0
+0x008:  str r6, [r7, #4]    @ Data hazard on reg[7]. Deal with EX forward.
+0x00c:  ldr r1, [r6]        @ Data hazard on mem[4]. No extra operation needed.
+0x010:  str r7, [r1]        @ Data hazard on reg[1]. Deal with MEM forward and one BUBBLE.
+0x014:  mov r2, #4
+0x018:  ldr r2, [r2]        @ Data hazard on reg[2]. Deal with EX forward.
+0x01c:  mul r2, r2, #2      @ Data hazard on reg[2]. Deal with MEM forward and one BUBBLE.
+0x020:  add r3, r2, r1      @ Data hazard on reg[2]. Deal with EX forward.
+0x024:  Exit

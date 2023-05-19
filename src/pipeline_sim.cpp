@@ -84,7 +84,7 @@ void ID() {
     //detect load-use data hazard
     load_use_hazard = false;
 
-    if (Register_IF_ID.recent_instr.opcode == OPC_MOV){
+    if (Register_IF_ID.recent_instr.opcode == OPC_MOV || (Register_IF_ID.recent_instr.type == INSTR_TYPE_EXTRA && Register_IF_ID.recent_instr.opcode == OPC_LDR)){
         if (Register_IF_ID.recent_instr.type == INSTR_TYPE_REG){
             Register_ID_EX.dest = Register_IF_ID.recent_instr.dest;
             Register_ID_EX.r2 = Register_IF_ID.recent_instr.operand1;
@@ -92,7 +92,7 @@ void ID() {
             if (preInstructIsLoad && preInstructDest == Register_ID_EX.r2){
                 load_use_hazard = true;
             }
-        }else if (Register_IF_ID.recent_instr.type == INSTR_TYPE_IMM){
+        }else if (Register_IF_ID.recent_instr.type == INSTR_TYPE_IMM || (Register_IF_ID.recent_instr.type == INSTR_TYPE_EXTRA && Register_IF_ID.recent_instr.opcode == OPC_LDR)){
             Register_ID_EX.dest = Register_IF_ID.recent_instr.dest; //don't need r2
             Register_ID_EX.immidiate = Register_IF_ID.recent_instr.operand1; 
         }else if (Register_IF_ID.recent_instr.type == INSTR_TYPE_EXTRA){ // pc lr
@@ -108,7 +108,7 @@ void ID() {
         Register_ID_EX.r2 = Register_IF_ID.recent_instr.dest;
         Register_ID_EX.r1Data = reg[Register_ID_EX.r1];
         Register_ID_EX.r2Data = reg[Register_ID_EX.r2];
-        Register_ID_EX.immidiate = Register_IF_ID.recent_instr.operand2;
+        Register_ID_EX.immidiate = Register_IF_ID.recent_instr.operand2 == -1 ? 0 : Register_IF_ID.recent_instr.operand2;
         if (preInstructIsLoad && (preInstructDest == Register_ID_EX.r1 || preInstructDest == Register_ID_EX.r2)){
             load_use_hazard = true;
         }
@@ -122,6 +122,9 @@ void ID() {
         Register_ID_EX.r2 = Register_IF_ID.recent_instr.operand2;
         Register_ID_EX.r1Data = reg[Register_ID_EX.r1];
         Register_ID_EX.r2Data = reg[Register_ID_EX.r2];
+        if (Register_IF_ID.recent_instr.opcode == OPC_LDR){
+            Register_ID_EX.immidiate = Register_IF_ID.recent_instr.operand2 == -1 ? 0 : Register_IF_ID.recent_instr.operand2;
+        }
         if (preInstructIsLoad && (preInstructDest == Register_ID_EX.r1 || preInstructDest == Register_ID_EX.r2)){
             load_use_hazard = true;
         }
@@ -134,7 +137,7 @@ void ID() {
             load_use_hazard = true;
         }
     }
-
+    
     Register_ID_EX.load_use_hazard = load_use_hazard;
     if (load_use_hazard){
         reg[ARM_REG_PC] -= 4;
@@ -207,7 +210,7 @@ void EX() {
     }
 
     int op1 = r1;
-    int op2 = Register_ID_EX.type == INSTR_TYPE_IMM ? Register_ID_EX.immidiate : r2;
+    int op2 = Register_ID_EX.type == INSTR_TYPE_IMM  || (Register_ID_EX.type == INSTR_TYPE_EXTRA && Register_ID_EX.opcode == OPC_LDR) ? Register_ID_EX.immidiate : r2;
 
     //calculate
     int ans = 0;
@@ -220,11 +223,11 @@ void EX() {
     }else if (Register_ID_EX.opcode == OPC_MUL){
         ans = op1 * op2;
         Register_EX_MEM.val_arith = ans;
-    }else if (Register_ID_EX.opcode == OPC_MOV){
+    }else if (Register_ID_EX.opcode == OPC_MOV || (Register_ID_EX.type == INSTR_TYPE_EXTRA && Register_ID_EX.opcode == OPC_LDR)){
         ans = op2;
         Register_EX_MEM.val_arith = ans;
     }else if (Register_ID_EX.opcode == OPC_LDR || Register_ID_EX.opcode == OPC_STR){
-        ans = op1 + op2;
+        ans = op1 + Register_ID_EX.immidiate;
         Register_EX_MEM.val_arith = ans;
     }else if (Register_ID_EX.opcode == OPC_CMPBGE || Register_ID_EX.opcode == OPC_CMPBNE){
         ans = op1 - op2;
@@ -272,12 +275,12 @@ void MEM() {
     }
 
 
-    if (Register_EX_MEM.opcode == OPC_ADD || Register_EX_MEM.opcode == OPC_SUB || Register_EX_MEM.opcode == OPC_MUL || Register_EX_MEM.opcode == OPC_MOV){
+    if (Register_EX_MEM.opcode == OPC_ADD || Register_EX_MEM.opcode == OPC_SUB || Register_EX_MEM.opcode == OPC_MUL || Register_EX_MEM.opcode == OPC_MOV || (Register_EX_MEM.type == INSTR_TYPE_EXTRA && Register_EX_MEM.opcode == OPC_LDR)){
         EX_MEM_RegWrite = true;
         EX_MEM_Dest = Register_EX_MEM.dest;
         EX_MEM_Result = Register_EX_MEM.val_arith;
         Register_MEM_WB.val_data = Register_EX_MEM.val_arith;
-    }else if (Register_EX_MEM.opcode == OPC_LDR){
+    }else if (Register_EX_MEM.opcode == OPC_LDR && Register_EX_MEM.type != INSTR_TYPE_EXTRA){
         EX_MEM_RegWrite = true;
         EX_MEM_Dest = Register_EX_MEM.dest;
         EX_MEM_Result = Register_EX_MEM.val_arith;
